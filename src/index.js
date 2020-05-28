@@ -1,11 +1,45 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-const Display = (props) => {
-	if (props.score === 5) {
-		return <div>game over</div>;
-	} else {
-		return <div>{props.score}</div>;
+const ScorekeeperDisplay = (props) => {
+	if (props.total === 0) {
+		return <div>begin new game</div>;
+	}
+	if (props.total === 1) {
+		return (
+			<div>
+				<p>S</p>
+			</div>
+		);
+	}
+	if (props.total === 2) {
+		return (
+			<div>
+				<p>SK</p>
+			</div>
+		);
+	}
+	if (props.total === 3) {
+		return (
+			<div>
+				<p>SKA</p>
+			</div>
+		);
+	}
+	if (props.total === 4) {
+		return (
+			<div>
+				<p>SKAT</p>
+			</div>
+		);
+	}
+	if (props.total === 5) {
+		return (
+			<div>
+				<p>SKATE</p>
+				<h3>game over</h3>
+			</div>
+		);
 	}
 };
 
@@ -14,23 +48,27 @@ const Button = (props) => {
 };
 
 const App = () => {
-	const [ score, setCounter ] = useState(0);
+	const [ total, setTotal ] = useState(0);
 
-	const incrementCounter = () => {
-		setCounter(score + 1);
-		if (score === 5) {
-			setCounter(0);
-		}
+	const resetGame = () => {
+		setTotal(0);
+	};
+
+	const landedCounter = () => {
+		console.log(total);
+		// do nothing or pass to next player
+	};
+
+	const missedCounter = () => {
+		setTotal(total + 1);
 	};
 
 	return (
 		<div>
-			<Display score={score} />
-			<Button handleClick={incrementCounter} text="S" />
-			<Button handleClick={incrementCounter} text="K" />
-			<Button handleClick={incrementCounter} text="A" />
-			<Button handleClick={incrementCounter} text="T" />
-			<Button handleClick={incrementCounter} text="E" />
+			<ScorekeeperDisplay total={total} />
+			<Button handleClick={landedCounter} text="Landed It" />
+			<Button handleClick={missedCounter} text="Missed It" />
+			<Button handleClick={resetGame} text="Start New Game" />
 		</div>
 	);
 };
