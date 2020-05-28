@@ -1,63 +1,9 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-const Greeting = (props) => {
-	if (props.total === 0) {
-		return <div>Start Game</div>;
-	} else {
-		return <div> </div>;
-	}
-};
-
-const ScorekeeperDisplay = (props) => {
-	if (props.total === 0) {
-		return <div>no score</div>;
-	}
-	if (props.total === 1) {
-		return (
-			<div>
-				<p>S</p>
-			</div>
-		);
-	}
-	if (props.total === 2) {
-		return (
-			<div>
-				<p>SK</p>
-			</div>
-		);
-	}
-	if (props.total === 3) {
-		return (
-			<div>
-				<p>SKA</p>
-			</div>
-		);
-	}
-	if (props.total === 4) {
-		return (
-			<div>
-				<p>SKAT</p>
-			</div>
-		);
-	}
-	if (props.total === 5) {
-		return (
-			<div>
-				<p>SKATE</p>
-				<h3>game over</h3>
-			</div>
-		);
-	}
-};
-
-const Button = (props) => {
-	return (
-		<button onClick={props.handleClick} disabled={props.disabled}>
-			{props.text}
-		</button>
-	);
-};
+import Greeting from './components/Greeting';
+import ScorekeeperDisplay from './components/ScorekeeperDisplay';
+import Button from './components/Button';
 
 const App = () => {
 	const [ total, setTotal ] = useState(0);
