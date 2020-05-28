@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Greeting from './components/Greeting';
 import ScorekeeperDisplay from './components/ScorekeeperDisplay';
-import Button from './components/Button';
+import MaterialButton from './components/MaterialButton';
 
 const App = () => {
 	const [ total, setTotal ] = useState(0);
@@ -31,13 +31,13 @@ const App = () => {
 	};
 
 	return (
-		<div>
+		<div style={{ textAlign: `center` }}>
 			<Greeting total={total} />
 			<ScorekeeperDisplay total={total} />
-			<Button handleClick={landedCounter} disabled={isEnabled} text="Landed" />
-			<Button handleClick={missedCounter} disabled={isEnabled} text="Missed" />
-			<Button handleClick={removeLetter} disabled={isEnabled} text="Remove A Letter" />
-			<Button handleClick={resetGame} text="Start New Game" />
+			<MaterialButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
+			<MaterialButton handleClick={missedCounter} disabled={isEnabled} text="Missed" />
+			<MaterialButton handleClick={removeLetter} disabled={isEnabled} text="Remove A Letter" />
+			<MaterialButton handleClick={resetGame} text="Start New Game" />
 		</div>
 	);
 };
