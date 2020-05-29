@@ -1,42 +1,42 @@
 import React from 'react';
 
 export default function ScorekeeperDisplay(props) {
-	if (props.total === 0) {
-		return <div>no score</div>;
+	if (props.playerOne === 0 || props.playerTwo === 0) {
+		return <h1>no score</h1>;
 	}
-	if (props.total === 1) {
+	if (props.playerOne === 1 || props.playerTwo === 1) {
 		return (
 			<div>
-				<p>S</p>
+				<h2>S</h2>
 			</div>
 		);
 	}
-	if (props.total === 2) {
+	if (props.playerOne === 2 || props.playerTwo === 2) {
 		return (
 			<div>
-				<p>SK</p>
+				<h2>S K</h2>
 			</div>
 		);
 	}
-	if (props.total === 3) {
+	if (props.playerOne === 3 || props.playerTwo === 3) {
 		return (
 			<div>
-				<p>SKA</p>
+				<h2>S K A</h2>
 			</div>
 		);
 	}
-	if (props.total === 4) {
+	if (props.playerOne === 4 || props.playerTwo === 4) {
 		return (
 			<div>
-				<p>SKAT</p>
+				<h2>S K A T</h2>
 			</div>
 		);
 	}
-	if (props.total === 5) {
+	if (props.playerOne === 5 || props.playerTwo === 5) {
 		return (
 			<div>
-				<p>SKATE</p>
-				<h3>game over</h3>
+				<h1>game over</h1>
+				<h2>S K A T E</h2>
 			</div>
 		);
 	}
