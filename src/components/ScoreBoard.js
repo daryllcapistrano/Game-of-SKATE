@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ScorekeeperDisplay(props) {
+export default function ScoreBoard(props) {
 	if (props.playerOne === 0 || props.playerTwo === 0) {
 		return <h1>no score</h1>;
 	}
