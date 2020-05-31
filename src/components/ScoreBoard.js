@@ -2,7 +2,11 @@ import React from 'react';
 
 export default function ScoreBoard(props) {
 	if (props.playerOne === 0 || props.playerTwo === 0) {
-		return <h1>no score</h1>;
+		return (
+			<div>
+				<h2>NO LETTERS</h2>
+			</div>
+		);
 	}
 	if (props.playerOne === 1 || props.playerTwo === 1) {
 		return (
@@ -35,7 +39,6 @@ export default function ScoreBoard(props) {
 	if (props.playerOne === 5 || props.playerTwo === 5) {
 		return (
 			<div>
-				<h1>game over</h1>
 				<h2>S K A T E</h2>
 			</div>
 		);

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-// import ReactDOM from 'react-dom';
 
-import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
@@ -50,13 +49,11 @@ export default function ScoreCards() {
 	return (
 		<React.Fragment>
 			<Container>
-				<Container>
-					<Display playerOne={playerOne} playerTwo={playerTwo} />
-				</Container>
+				<Display playerOne={playerOne} playerTwo={playerTwo} />
+				<ActionButton handleClick={resetGame} text="Start New Game" />
 				<Grid container>
-					{/* begin player one */}
-					<Grid item style={{ padding: `10px` }}>
-						<Paper elevation={2}>
+					<Grid item xs={12} sm={6}>
+						<Card>
 							<Container style={{ textAlign: `center`, padding: `15px` }}>
 								<Container style={{ padding: `15px` }}>
 									<ScoreBoard playerOne={playerOne} />
@@ -65,29 +62,21 @@ export default function ScoreCards() {
 								<ActionButton handleClick={missedLeft} disabled={isEnabled} text="Missed" />
 								<ActionButton handleClick={removeLetterLeft} disabled={isEnabled} text="Remove A Letter" />
 							</Container>
-						</Paper>
+						</Card>
 					</Grid>
-					{/* end player one */}
-					{/* begin player two */}
-					<Grid item style={{ padding: `10px` }}>
-						<Paper elevation={2}>
+					<Grid item xs={12} sm={6}>
+						<Card>
 							<Container style={{ textAlign: `center`, padding: `15px` }}>
 								<Container style={{ padding: `15px` }}>
 									<ScoreBoard playerTwo={playerTwo} />
 								</Container>
-								<Container>
-									<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
-									<ActionButton handleClick={missedRight} disabled={isEnabled} text="Missed" />
-									<ActionButton handleClick={removeLetterRight} disabled={isEnabled} text="Remove A Letter" />
-								</Container>
+								<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
+								<ActionButton handleClick={missedRight} disabled={isEnabled} text="Missed" />
+								<ActionButton handleClick={removeLetterRight} disabled={isEnabled} text="Remove A Letter" />
 							</Container>
-						</Paper>
+						</Card>
 					</Grid>
-					{/* end player two */}
 				</Grid>
-				<Container>
-					<ActionButton handleClick={resetGame} text="Start New Game" />
-				</Container>
 			</Container>
 		</React.Fragment>
 	);
