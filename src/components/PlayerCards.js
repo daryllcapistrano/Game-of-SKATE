@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
-import Greeting from './Greeting';
+import Display from './Display';
 import ScoreBoard from './ScoreBoard';
 import ActionButton from './ActionButton';
 
@@ -49,10 +49,9 @@ export default function ScoreCards() {
 
 	return (
 		<React.Fragment>
-			<Container style={{ marginTop: `150px` }}>
+			<Container>
 				<Container>
-					<Greeting playerOne={playerOne} playerTwo={playerTwo} />
-					<ActionButton handleClick={resetGame} text="Start New Game" />
+					<Display playerOne={playerOne} playerTwo={playerTwo} />
 				</Container>
 				<Grid container>
 					{/* begin player one */}
@@ -62,17 +61,9 @@ export default function ScoreCards() {
 								<Container style={{ padding: `15px` }}>
 									<ScoreBoard playerOne={playerOne} />
 								</Container>
-								<Grid container>
-									<Grid item xs={6}>
-										<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
-									</Grid>
-									<Grid item xs={6}>
-										<ActionButton handleClick={missedLeft} disabled={isEnabled} text="Missed" />
-									</Grid>
-									<Grid item xs={12}>
-										<ActionButton handleClick={removeLetterLeft} disabled={isEnabled} text="Remove A Letter" />
-									</Grid>
-								</Grid>
+								<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
+								<ActionButton handleClick={missedLeft} disabled={isEnabled} text="Missed" />
+								<ActionButton handleClick={removeLetterLeft} disabled={isEnabled} text="Remove A Letter" />
 							</Container>
 						</Paper>
 					</Grid>
@@ -85,23 +76,18 @@ export default function ScoreCards() {
 									<ScoreBoard playerTwo={playerTwo} />
 								</Container>
 								<Container>
-									<Grid container>
-										<Grid item xs={6}>
-											<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
-										</Grid>
-										<Grid item xs={6}>
-											<ActionButton handleClick={missedRight} disabled={isEnabled} text="Missed" />
-										</Grid>
-										<Grid item xs={12}>
-											<ActionButton handleClick={removeLetterRight} disabled={isEnabled} text="Remove A Letter" />
-										</Grid>
-									</Grid>
+									<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
+									<ActionButton handleClick={missedRight} disabled={isEnabled} text="Missed" />
+									<ActionButton handleClick={removeLetterRight} disabled={isEnabled} text="Remove A Letter" />
 								</Container>
 							</Container>
 						</Paper>
 					</Grid>
 					{/* end player two */}
 				</Grid>
+				<Container>
+					<ActionButton handleClick={resetGame} text="Start New Game" />
+				</Container>
 			</Container>
 		</React.Fragment>
 	);

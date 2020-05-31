@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 export default function Header() {
 	return (
 		<React.Fragment>
-			<AppBar>
+			<AppBar position="static">
 				<Toolbar>
 					<h1>Skateboarding Game Tracker</h1>
 				</Toolbar>
