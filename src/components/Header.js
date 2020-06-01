@@ -13,7 +13,7 @@ export default function Header() {
 	return (
 		<React.Fragment>
 			<AppBar position="static" elevation={0} color="transparent">
-				<Toolbar>
+				<Toolbar disableGutters={true}>
 					<StyledContainer>
 						<h1>Game of Skate</h1>
 					</StyledContainer>

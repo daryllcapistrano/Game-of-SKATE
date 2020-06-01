@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
 import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 
@@ -50,30 +53,36 @@ export default function ScoreCards() {
 		<React.Fragment>
 			<Container>
 				<Display playerOne={playerOne} playerTwo={playerTwo} />
-				<ActionButton handleClick={resetGame} text="Start New Game" />
+				<Container style={{ textAlign: `center`, padding: `15px` }}>
+					<ActionButton handleClick={resetGame} text="Start New Game" />
+				</Container>
 				<Grid container>
-					<Grid item xs={12} sm={6}>
-						<Card>
-							<Container style={{ textAlign: `center`, padding: `15px` }}>
-								<Container style={{ padding: `15px` }}>
-									<ScoreBoard playerOne={playerOne} />
-								</Container>
-								<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
-								<ActionButton handleClick={missedLeft} disabled={isEnabled} text="Missed" />
-								<ActionButton handleClick={removeLetterLeft} disabled={isEnabled} text="Remove A Letter" />
-							</Container>
+					<Grid item xs={12} sm={6} style={{ padding: `15px` }}>
+						<Card raised={true}>
+							<CardContent style={{ textAlign: `center` }}>
+								<ScoreBoard playerOne={playerOne} />
+							</CardContent>
+							<CardActions>
+								<ButtonGroup>
+									<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
+									<ActionButton handleClick={missedLeft} disabled={isEnabled} text="Missed" />
+									<ActionButton handleClick={removeLetterLeft} disabled={isEnabled} text="Undo Letter" />
+								</ButtonGroup>
+							</CardActions>
 						</Card>
 					</Grid>
-					<Grid item xs={12} sm={6}>
-						<Card>
-							<Container style={{ textAlign: `center`, padding: `15px` }}>
-								<Container style={{ padding: `15px` }}>
-									<ScoreBoard playerTwo={playerTwo} />
-								</Container>
-								<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
-								<ActionButton handleClick={missedRight} disabled={isEnabled} text="Missed" />
-								<ActionButton handleClick={removeLetterRight} disabled={isEnabled} text="Remove A Letter" />
-							</Container>
+					<Grid item xs={12} sm={6} style={{ padding: `15px` }}>
+						<Card raised={true}>
+							<CardContent style={{ textAlign: `center` }}>
+								<ScoreBoard playerTwo={playerTwo} />
+							</CardContent>
+							<CardActions>
+								<ButtonGroup>
+									<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
+									<ActionButton handleClick={missedRight} disabled={isEnabled} text="Missed" />
+									<ActionButton handleClick={removeLetterRight} disabled={isEnabled} text="Undo Letter" />
+								</ButtonGroup>
+							</CardActions>
 						</Card>
 					</Grid>
 				</Grid>
