@@ -17,11 +17,21 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledGrid = styled(Grid)`
-	padding: 15px
+	text-align: -webkit-center;
+	padding: 15px;
+`;
+
+const StyledCard = styled(Card)`
+	max-width: 400px;
+	max-height: 400px;
 `;
 
 const StyledCardContent = styled(CardContent)`
 	text-align: center;
+`;
+
+const StyledCardActions = styled(CardActions)`
+	justify-content: center;
 `;
 
 export default function ScoreCards() {
@@ -71,34 +81,34 @@ export default function ScoreCards() {
 				</StyledContainer>
 				<Grid container>
 					<StyledGrid item xs={12} sm={6}>
-						<Card raised={true}>
+						<StyledCard raised={true}>
 							<StyledCardContent>
 								<strong>Player 1</strong>
 								<ScoreBoard playerOne={playerOne} />
 							</StyledCardContent>
-							<CardActions>
+							<StyledCardActions>
 								<ButtonGroup>
 									<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
 									<ActionButton handleClick={missedLeft} disabled={isEnabled} text="Missed" />
 									<ActionButton handleClick={removeLetterLeft} disabled={isEnabled} text="Undo Letter" />
 								</ButtonGroup>
-							</CardActions>
-						</Card>
+							</StyledCardActions>
+						</StyledCard>
 					</StyledGrid>
 					<StyledGrid item xs={12} sm={6}>
-						<Card raised={true}>
+						<StyledCard raised={true}>
 							<StyledCardContent>
 								<strong>Player 2</strong>
 								<ScoreBoard playerTwo={playerTwo} />
 							</StyledCardContent>
-							<CardActions>
+							<StyledCardActions>
 								<ButtonGroup>
 									<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
 									<ActionButton handleClick={missedRight} disabled={isEnabled} text="Missed" />
 									<ActionButton handleClick={removeLetterRight} disabled={isEnabled} text="Undo Letter" />
 								</ButtonGroup>
-							</CardActions>
-						</Card>
+							</StyledCardActions>
+						</StyledCard>
 					</StyledGrid>
 				</Grid>
 			</Container>
