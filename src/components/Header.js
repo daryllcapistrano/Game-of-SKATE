@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Container from '@material-ui/core/Container';
+import { AppBar, Toolbar, Container } from '@material-ui/core/';
 
 const StyledContainer = styled(Container)`
 	text-align: center;

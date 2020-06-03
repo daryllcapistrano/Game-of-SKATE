@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
+
+import { Card, CardActions, CardContent, ButtonGroup, Container, Grid } from '@material-ui/core/';
 
 import Display from './Display';
 import ScoreBoard from './ScoreBoard';

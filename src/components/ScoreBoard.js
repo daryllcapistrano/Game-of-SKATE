@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
+import { Container } from '@material-ui/core/';
 
 export default function ScoreBoard(props) {
 	if (props.playerOne === 0 || props.playerTwo === 0) {
