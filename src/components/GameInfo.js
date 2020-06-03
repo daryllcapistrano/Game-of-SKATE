@@ -12,12 +12,13 @@ export default function GameInfo() {
 			<br />
 			<br />
 			<Container>
-				<strong>Rules:</strong> The Game of SKATE is based on the basketball Game of HORSE. Here's how to play: The
-				first skater tries a trick, makes it, and everyone else has to make it. Whoever doesn't make it gets a letter.
-				The first letter is "S", the second letter is "K", and so on, until "S-K-A-T-E" is spelled out, and that person
-				is out of the game. When it's the first skater's turn again, he tries another trick. If he makes it, the whole
-				process repeats. If the first person misses the trick he tries, the second player tries his own trick. If he
-				makes it, everyone else has to make that trick, in order. If anyone misses, they get a letter, and so on.
+				<strong>Here's how to play:</strong> One player sets a trick by doing a particular skateboarding trick of their
+				choice. If the trick is not landed, another player attempts to set a trick. Once a trick has been set (landed),
+				the other player(s) must respond by doing the same trick in their first try. If they make it the game continues;
+				If every one gets the trick the player who set it gets a point if they miss it, they get a letter, starting with
+				S, and so on, until they have missed five tricks, spelling SKATE, and they are out or the game is over. No trick
+				may be set more than once in the same game and a skater defending on their last letter may receive two attempts
+				at that trick. If the player lands the trick they have gained the lead and set the trick.
 			</Container>
 			<br />
 			<br />

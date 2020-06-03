@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import styled from 'styled-components';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -10,6 +10,19 @@ import Grid from '@material-ui/core/Grid';
 import Display from './Display';
 import ScoreBoard from './ScoreBoard';
 import ActionButton from './ActionButton';
+
+const StyledContainer = styled(Container)`
+	text-align: center;
+	padding: 15px
+`;
+
+const StyledGrid = styled(Grid)`
+	padding: 15px
+`;
+
+const StyledCardContent = styled(CardContent)`
+	text-align: center;
+`;
 
 export default function ScoreCards() {
 	const [ playerOne, setPlayerOne ] = useState(0);
@@ -53,15 +66,16 @@ export default function ScoreCards() {
 		<React.Fragment>
 			<Container>
 				<Display playerOne={playerOne} playerTwo={playerTwo} />
-				<Container style={{ textAlign: `center`, padding: `15px` }}>
-					<ActionButton handleClick={resetGame} text="Start New Game" />
-				</Container>
+				<StyledContainer>
+					<ActionButton handleClick={resetGame} text="Reset Game" />
+				</StyledContainer>
 				<Grid container>
-					<Grid item xs={12} sm={6} style={{ padding: `15px` }}>
+					<StyledGrid item xs={12} sm={6}>
 						<Card raised={true}>
-							<CardContent style={{ textAlign: `center` }}>
+							<StyledCardContent>
+								<strong>Player 1</strong>
 								<ScoreBoard playerOne={playerOne} />
-							</CardContent>
+							</StyledCardContent>
 							<CardActions>
 								<ButtonGroup>
 									<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
@@ -70,12 +84,13 @@ export default function ScoreCards() {
 								</ButtonGroup>
 							</CardActions>
 						</Card>
-					</Grid>
-					<Grid item xs={12} sm={6} style={{ padding: `15px` }}>
+					</StyledGrid>
+					<StyledGrid item xs={12} sm={6}>
 						<Card raised={true}>
-							<CardContent style={{ textAlign: `center` }}>
+							<StyledCardContent>
+								<strong>Player 2</strong>
 								<ScoreBoard playerTwo={playerTwo} />
-							</CardContent>
+							</StyledCardContent>
 							<CardActions>
 								<ButtonGroup>
 									<ActionButton handleClick={landedCounter} disabled={isEnabled} text="Landed" />
@@ -84,7 +99,7 @@ export default function ScoreCards() {
 								</ButtonGroup>
 							</CardActions>
 						</Card>
-					</Grid>
+					</StyledGrid>
 				</Grid>
 			</Container>
 		</React.Fragment>
