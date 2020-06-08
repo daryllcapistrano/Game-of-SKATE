@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import TemporaryDrawer from '../components/Drawer';
 
 import { AppBar, Toolbar, Container } from '@material-ui/core/';
 
@@ -15,6 +16,9 @@ export default function Header() {
 					<StyledContainer>
 						<h1>Game of Skate</h1>
 					</StyledContainer>
+					<div>
+						<TemporaryDrawer />
+					</div>
 				</Toolbar>
 			</AppBar>
 		</React.Fragment>
