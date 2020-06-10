@@ -1,12 +1,10 @@
 import React from 'react';
-// import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 const useStyles = makeStyles({
@@ -15,7 +13,7 @@ const useStyles = makeStyles({
 	}
 });
 
-export default function TemporaryDrawer() {
+export default function TopDrawer() {
 	const classes = useStyles();
 	const [ state, setState ] = React.useState({
 		top: false
@@ -35,14 +33,14 @@ export default function TemporaryDrawer() {
 	const list = () => (
 		<div className={classes.fullList} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
 			<List>
-				<ListItemText>
-					<div style={{ textAlign: `center` }}>
-						<strong>Here's how to play:</strong>{' '}
-					</div>
-				</ListItemText>
-			</List>
-			<Divider />
-			<List>
+				<ListItem>
+					<ListItemText>
+						<div>
+							<strong>Here's how to play:</strong>{' '}
+						</div>
+					</ListItemText>
+				</ListItem>
+				<Divider />
 				<ListItem>
 					<ListItemText>
 						One player sets a trick by doing a particular skateboarding trick of their choice. If the trick is not
@@ -61,10 +59,11 @@ export default function TemporaryDrawer() {
 	return (
 		<div>
 			{[ 'top' ].map((anchor) => (
-				<React.Fragment>
+				<React.Fragment key={anchor}>
 					<Button onClick={toggleDrawer(anchor, true)}>Game Rules</Button>
 					<Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
 						{list(anchor)}
+						<Button onClick={toggleDrawer(anchor, false)}>close</Button>
 					</Drawer>
 				</React.Fragment>
 			))}

@@ -72,9 +72,6 @@ export default function ScoreCards() {
 		<React.Fragment>
 			<Container>
 				<Display playerOne={playerOne} playerTwo={playerTwo} />
-				<StyledContainer>
-					<ActionButton handleClick={resetGame} text="Reset Game" />
-				</StyledContainer>
 				<Grid container>
 					<StyledGrid item xs={12} sm={6}>
 						<StyledCard raised={true}>
@@ -106,6 +103,9 @@ export default function ScoreCards() {
 							</StyledCardActions>
 						</StyledCard>
 					</StyledGrid>
+					<StyledContainer>
+						<ActionButton handleClick={resetGame} text="Reset Game" />
+					</StyledContainer>
 				</Grid>
 			</Container>
 		</React.Fragment>
