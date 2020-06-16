@@ -84,7 +84,7 @@ export default function ScoreCards() {
           <StyledGrid item xs={12} sm={6}>
             <StyledCard raised={true}>
               <StyledCardContent>
-                <strong>Player 1</strong>
+                <p>Player 1</p>
                 <ScoreBoard playerOne={playerOne} />
               </StyledCardContent>
               <StyledCardActions>
@@ -117,7 +117,7 @@ export default function ScoreCards() {
           <StyledGrid item xs={12} sm={6}>
             <StyledCard raised={true}>
               <StyledCardContent>
-                <strong>Player 2</strong>
+                <p>Player 2</p>
                 <ScoreBoard playerTwo={playerTwo} />
               </StyledCardContent>
               <StyledCardActions>
