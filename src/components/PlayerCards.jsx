@@ -17,6 +17,7 @@ import ActionButton from "./ActionButton";
 const StyledContainer = styled(Container)`
   text-align: center;
   padding: 15px;
+  margin-top: 2rem;
 `;
 
 const StyledGrid = styled(Grid)`
@@ -92,16 +93,22 @@ export default function ScoreCards() {
                     handleClick={landedCounter}
                     disabled={isEnabled}
                     text="Landed"
+                    color="primary"
+                    variant="contained"
                   />
                   <ActionButton
                     handleClick={missedLeft}
                     disabled={isEnabled}
                     text="Missed"
+                    color="primary"
+                    variant="contained"
                   />
                   <ActionButton
                     handleClick={removeLetterLeft}
                     disabled={isEnabled}
-                    text="Undo Letter"
+                    text="Undo"
+                    color="primary"
+                    variant="contained"
                   />
                 </ButtonGroup>
               </StyledCardActions>
@@ -114,28 +121,39 @@ export default function ScoreCards() {
                 <ScoreBoard playerTwo={playerTwo} />
               </StyledCardContent>
               <StyledCardActions>
-                <ButtonGroup>
+                <ButtonGroup spacing>
                   <ActionButton
                     handleClick={landedCounter}
                     disabled={isEnabled}
                     text="Landed"
+                    color="primary"
+                    variant="contained"
                   />
                   <ActionButton
                     handleClick={missedRight}
                     disabled={isEnabled}
                     text="Missed"
+                    color="primary"
+                    variant="contained"
                   />
                   <ActionButton
                     handleClick={removeLetterRight}
                     disabled={isEnabled}
-                    text="Undo Letter"
+                    text="Undo"
+                    color="primary"
+                    variant="contained"
                   />
                 </ButtonGroup>
               </StyledCardActions>
             </StyledCard>
           </StyledGrid>
           <StyledContainer>
-            <ActionButton handleClick={resetGame} text="Reset Game" />
+            <ActionButton
+              handleClick={resetGame}
+              text="Reset Game"
+              color="secondary"
+              variant="outlined"
+            />
           </StyledContainer>
         </Grid>
       </Container>

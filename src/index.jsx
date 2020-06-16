@@ -8,8 +8,9 @@ import PlayerCards from "./components/PlayerCards";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+	  font-family: 'Rubik', sans-serif;
   }
 `;
 

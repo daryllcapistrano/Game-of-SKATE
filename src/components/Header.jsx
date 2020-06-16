@@ -1,17 +1,17 @@
 import React from "react";
-import TopDrawer from "./TopDrawer";
+// import TopDrawer from "./TopDrawer";
 
 import { AppBar, Toolbar, Container } from "@material-ui/core/";
 
 export default function Header() {
   return (
     <React.Fragment>
-      <AppBar position="static" elevation={0} color="transparent">
+      <AppBar position="static" elevation={0}>
         <Toolbar disableGutters={true}>
           <Container>
             <h1>Game of Skate</h1>
           </Container>
-          <TopDrawer />
+          {/* <TopDrawer /> */}
         </Toolbar>
       </AppBar>
     </React.Fragment>
