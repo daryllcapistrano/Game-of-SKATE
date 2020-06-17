@@ -9,6 +9,7 @@ export default function ActionButton(props) {
       color={props.color}
       variant={props.variant}
       disableElevation
+      // TODO fix below to use styled components, currently not overriding styles
       style={{ margin: `5px` }}
     >
       {props.text}
