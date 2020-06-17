@@ -13,14 +13,14 @@ export default function Display(props) {
   if (props.playerOne < 5 && props.playerTwo === 5) {
     return (
       <StyledPaper>
-        <strong>Status:</strong> Player One Wins
+        <strong>Status:</strong> <Winner>Player One Wins</Winner>
       </StyledPaper>
     );
   }
   if (props.playerOne === 5 && props.playerTwo < 5) {
     return (
       <StyledPaper>
-        <strong>Status:</strong> Player Two Wins
+        <strong>Status:</strong> <Winner>Player Two Wins</Winner>
       </StyledPaper>
     );
   } else {
@@ -38,4 +38,9 @@ const StyledPaper = styled(Paper)`
   padding: 14px 28px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   width: fit-content;
+`;
+
+const Winner = styled.span`
+  color: #deb841;
+  font-size: 1rem;
 `;
