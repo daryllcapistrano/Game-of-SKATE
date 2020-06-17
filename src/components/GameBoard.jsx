@@ -59,13 +59,13 @@ export default function ScoreCards() {
       <Container>
         <StyledPaper elevation={3} square={true}>
           <GameInfo />
-          <Display playerOne={playerOne} playerTwo={playerTwo} />
         </StyledPaper>
+        <Display playerOne={playerOne} playerTwo={playerTwo} />
         <Grid container>
           <StyledGrid item xs={12} sm={6}>
             <StyledCard raised={true}>
               <StyledCardContent>
-                <p>Player 1</p>
+                <PlayerName>Player 1</PlayerName>
                 <ScoreBoard playerOne={playerOne} />
               </StyledCardContent>
               <StyledCardActions>
@@ -98,11 +98,11 @@ export default function ScoreCards() {
           <StyledGrid item xs={12} sm={6}>
             <StyledCard raised={true}>
               <StyledCardContent>
-                <p>Player 2</p>
+                <PlayerName>Player 2</PlayerName>
                 <ScoreBoard playerTwo={playerTwo} />
               </StyledCardContent>
               <StyledCardActions>
-                <ButtonGroup spacing>
+                <ButtonGroup>
                   <ActionButton
                     handleClick={landedCounter}
                     disabled={isEnabled}
@@ -168,4 +168,10 @@ const StyledCardActions = styled(CardActions)`
 const StyledPaper = styled(Paper)`
   margin: 2rem 0;
   padding: 15px;
+`;
+
+const PlayerName = styled.span`
+  margin-top: 0;
+  color: #0a0903;
+  font-weight: bold;
 `;

@@ -35,7 +35,7 @@ export default function Display(props) {
 const StyledPaper = styled(Paper)`
   margin: auto;
   margin-bottom: 2rem;
-  padding: 7px 14px;
+  padding: 14px 28px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   width: fit-content;
 `;
