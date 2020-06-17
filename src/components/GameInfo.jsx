@@ -1,10 +1,6 @@
 import React from "react";
-import { Container } from "@material-ui/core/";
 import styled from "styled-components";
-
-const StyledContainer = styled(Container)`
-  padding-top: 2rem;
-`;
+import { Container } from "@material-ui/core/";
 
 export default function GameInfo() {
   return (
@@ -21,3 +17,7 @@ export default function GameInfo() {
     </React.Fragment>
   );
 }
+
+const StyledContainer = styled(Container)`
+  padding-top: 2rem;
+`;
