@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import ActionButton from "./Buttons";
+import GameStatus from "./Displays";
 
 import {
-  ButtonGroup,
   Card,
   CardActions,
   CardContent,
   Container,
   Grid,
-  Paper,
 } from "@material-ui/core/";
 
-import Display from "./Display";
 import ScoreBoard from "./ScoreBoard";
-import ActionButton from "./ActionButton";
 import GameInfo from "./GameInfo";
 
 export default function ScoreCards() {
@@ -55,12 +53,10 @@ export default function ScoreCards() {
   };
 
   return (
-    <React.Fragment>
+    <>
       <Container>
-        <StyledPaper elevation={3} square={true}>
-          <GameInfo />
-        </StyledPaper>
-        <Display playerOne={playerOne} playerTwo={playerTwo} />
+        <GameInfo />
+        <GameStatus playerOne={playerOne} playerTwo={playerTwo} />
         <Grid container>
           <StyledGrid item xs={12} sm={6}>
             <StyledCard raised={true}>
@@ -69,29 +65,27 @@ export default function ScoreCards() {
                 <ScoreBoard playerOne={playerOne} />
               </StyledCardContent>
               <StyledCardActions>
-                <ButtonGroup>
-                  <ActionButton
-                    handleClick={landedCounter}
-                    disabled={isEnabled}
-                    text="Landed"
-                    color="primary"
-                    variant="contained"
-                  />
-                  <ActionButton
-                    handleClick={missedLeft}
-                    disabled={isEnabled}
-                    text="Missed"
-                    color="primary"
-                    variant="contained"
-                  />
-                  <ActionButton
-                    handleClick={removeLetterLeft}
-                    disabled={isEnabled}
-                    text="Undo"
-                    color="primary"
-                    variant="contained"
-                  />
-                </ButtonGroup>
+                <ActionButton
+                  handleClick={landedCounter}
+                  disabled={isEnabled}
+                  text="Landed"
+                  color="primary"
+                  variant="contained"
+                />
+                <ActionButton
+                  handleClick={missedLeft}
+                  disabled={isEnabled}
+                  text="Missed"
+                  color="primary"
+                  variant="contained"
+                />
+                <ActionButton
+                  handleClick={removeLetterLeft}
+                  disabled={isEnabled}
+                  text="Undo"
+                  color="primary"
+                  variant="contained"
+                />
               </StyledCardActions>
             </StyledCard>
           </StyledGrid>
@@ -102,29 +96,27 @@ export default function ScoreCards() {
                 <ScoreBoard playerTwo={playerTwo} />
               </StyledCardContent>
               <StyledCardActions>
-                <ButtonGroup>
-                  <ActionButton
-                    handleClick={landedCounter}
-                    disabled={isEnabled}
-                    text="Landed"
-                    color="primary"
-                    variant="contained"
-                  />
-                  <ActionButton
-                    handleClick={missedRight}
-                    disabled={isEnabled}
-                    text="Missed"
-                    color="primary"
-                    variant="contained"
-                  />
-                  <ActionButton
-                    handleClick={removeLetterRight}
-                    disabled={isEnabled}
-                    text="Undo"
-                    color="primary"
-                    variant="contained"
-                  />
-                </ButtonGroup>
+                <ActionButton
+                  handleClick={landedCounter}
+                  disabled={isEnabled}
+                  text="Landed"
+                  color="primary"
+                  variant="contained"
+                />
+                <ActionButton
+                  handleClick={missedRight}
+                  disabled={isEnabled}
+                  text="Missed"
+                  color="primary"
+                  variant="contained"
+                />
+                <ActionButton
+                  handleClick={removeLetterRight}
+                  disabled={isEnabled}
+                  text="Undo"
+                  color="primary"
+                  variant="contained"
+                />
               </StyledCardActions>
             </StyledCard>
           </StyledGrid>
@@ -138,7 +130,7 @@ export default function ScoreCards() {
           </StyledContainer>
         </Grid>
       </Container>
-    </React.Fragment>
+    </>
   );
 }
 
@@ -163,11 +155,6 @@ const StyledCardContent = styled(CardContent)`
 
 const StyledCardActions = styled(CardActions)`
   justify-content: center;
-`;
-
-const StyledPaper = styled(Paper)`
-  margin: 2rem 0;
-  padding: 15px;
 `;
 
 const PlayerName = styled.span`

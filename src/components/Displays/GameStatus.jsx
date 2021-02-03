@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Paper } from "@material-ui/core/";
 
-export default function Display(props) {
+export default function GameStatus(props) {
   if (props.playerOne === 0 && props.playerTwo === 0) {
     return (
       <StyledPaper>
